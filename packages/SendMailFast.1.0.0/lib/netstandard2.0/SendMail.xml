@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SendMailFast</name>
+    </assembly>
+    <members>
+        <member name="T:SendMailFast.EmailAttachment">
+            <summary>
+            Class Get or Set email <see cref="T:System.Net.Mail.LinkedResource"/>
+            </summary>
+        </member>
+        <member name="F:SendMailFast.EmailAttachment.attachment">
+            <summary>
+            Variable <see cref="T:System.Net.Mail.LinkedResource"/>
+            </summary>
+        </member>
+        <member name="T:SendMailFast.EmailInfo">
+            <summary>
+            Class Get or Set email info
+            </summary>
+        </member>
+        <member name="P:SendMailFast.EmailInfo.EmailAddress">
+            <summary>
+            Set email address
+            </summary>
+        </member>
+        <member name="P:SendMailFast.EmailInfo.DisplayName">
+            <summary>
+            Set display name
+            </summary>
+        </member>
+        <member name="P:SendMailFast.EmailInfo.DisplayNameEncoding">
+            <summary>
+            Set display name encoding
+            </summary>
+        </member>
+        <member name="M:SendMailFast.EmailInfo.Get">
+            <summary>
+            Get mail address
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SendMailFast.EmailResource">
+            <summary>
+            Class Get or Set email <see cref="T:System.Net.Mail.LinkedResource"/>
+            </summary>
+        </member>
+        <member name="F:SendMailFast.EmailResource.resource">
+            <summary>
+            Variable <see cref="T:System.Net.Mail.LinkedResource"/>
+            </summary>
+        </member>
+        <member name="T:SendMailFast.SendMail">
+            <summary>
+            Send mail
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMail.Async">
+            <summary>
+            Not watting send mail
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMail.EmailForm">
+            <summary>
+            Email send
+            </summary>
+        </member>
+        <member name="F:SendMailFast.SendMail.EnableSsl">
+            <summary>
+            Set from <see cref="P:SendMailFast.SendMailSetting.EnableSsl"/> 
+            </summary>
+        </member>
+        <member name="F:SendMailFast.SendMail.EmailCredential">
+            <summary>
+            Set from <see cref="P:SendMailFast.SendMailSetting.EmailCredential"/> 
+            </summary>
+        </member>
+        <member name="F:SendMailFast.SendMail.Password">
+            <summary>
+            Set from <see cref="P:SendMailFast.SendMailSetting.Password"/> 
+            </summary>
+        </member>
+        <member name="F:SendMailFast.SendMail.ServerMail">
+            <summary>
+            Set from <see cref="P:SendMailFast.SendMailSetting.ServerMail"/> 
+            </summary>
+        </member>
+        <member name="F:SendMailFast.SendMail.PortMail">
+            <summary>
+            Set from <see cref="P:SendMailFast.SendMailSetting.PortMail"/> 
+            </summary>
+        </member>
+        <member name="M:SendMailFast.SendMail.#ctor">
+            <summary>
+            new SendMail();
+            <para/> or new SendMail(params array email to);
+            <para/> or function EmailTo(params array email to);
+            <para/> or email to is null: email send to <see cref="P:SendMailFast.SendMailSetting.EmailCredential"/>
+            </summary>
+        </member>
+        <member name="M:SendMailFast.SendMail.#ctor(SendMailFast.EmailInfo[])">
+            <summary>
+            Send mail to email
+            </summary>
+            <param name="emailTo">Email to: If null and send to EmailCredential</param>
+        </member>
+        <member name="M:SendMailFast.SendMail.#ctor(SendMailFast.EmailResource[])">
+            <summary>
+            send mail with resource (image) in template width content HTML
+            </summary>
+            <param name="resources"></param>
+        </member>
+        <member name="M:SendMailFast.SendMail.AddEmailTo(SendMailFast.EmailInfo[])">
+            <summary>
+            Get or set email to
+            </summary>
+            <param name="to">One or more email to</param>
+            <returns>Array <see cref="T:SendMailFast.EmailInfo"/></returns>
+        </member>
+        <member name="M:SendMailFast.SendMail.AddEmailCC(SendMailFast.EmailInfo[])">
+            <summary>
+            Get or set email CC
+            </summary>
+            <param name="cc">One or more email CC</param>
+            <returns>Array <see cref="T:SendMailFast.EmailInfo"/></returns>
+        </member>
+        <member name="M:SendMailFast.SendMail.AddAttachment(SendMailFast.EmailAttachment[])">
+            <summary>
+            Represents an attachment to an e-mail.
+            </summary>
+            <param name="attachments">One or more attachments</param>
+            <returns>Array <see cref="T:System.Net.Mail.Attachment"/></returns>
+        </member>
+        <member name="M:SendMailFast.SendMail.SendAsync(System.String,System.String)">
+            <summary>
+            Send mail in the background
+            </summary>
+            <param name="emailSubject">Title mail</param>
+            <param name="emailContent">Content mail</param>
+        </member>
+        <member name="M:SendMailFast.SendMail.Send(System.String,System.String)">
+            <summary>
+            Send mail
+            </summary>
+            <param name="emailSubject">Title mail</param>
+            <param name="emailContent">Content mail (allow html)</param>
+        </member>
+        <member name="M:SendMailFast.SendMail.SendErrorAsync(System.String,System.Exception)">
+            <summary>
+            Send mail from Exception in the background
+            </summary>
+            <param name="emailSubject">Title mail</param>
+            <param name="ex">Exception</param>
+        </member>
+        <member name="M:SendMailFast.SendMail.SendError(System.String,System.Exception)">
+            <summary>
+            Send mail from Exception
+            </summary>
+            <param name="emailSubject">Title mail</param>
+            <param name="ex">Exception</param>
+        </member>
+        <member name="M:SendMailFast.SendMail.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:SendMailFast.SendMailSetting">
+            <summary>
+            Setting default
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMailSetting.EnableSsl">
+            <summary>
+            Specify whether the <see cref="T:System.Net.Mail.SmtpClient"/> uses Secure Sockets Layer (SSL) to encrypt the connection.
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMailSetting.EmailCredential">
+            <summary>
+            Email <see cref="T:System.Net.NetworkCredential"/> 
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMailSetting.Password">
+            <summary>
+            Password <see cref="T:System.Net.NetworkCredential"/> 
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMailSetting.ServerMail">
+            <summary>
+            Gets or sets the name or IP address of the host used for SMTP transactions.
+            </summary>
+        </member>
+        <member name="P:SendMailFast.SendMailSetting.PortMail">
+            <summary>
+            Gets or sets the port used for SMTP transactions.
+            </summary>
+        </member>
+    </members>
+</doc>
